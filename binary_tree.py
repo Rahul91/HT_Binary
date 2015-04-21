@@ -12,12 +12,12 @@ class Node:
     def insert_node(self, data):
         if self.data:
             if data < self.data:
-                if self.left is None:
+                if self.left == None:
                     self.left = Node(data)
                 else:
                     self.left.insert_node(data)
             elif data > self.data:
-                if self.right is None:
+                if self.right == None:
                     self.right = Node(data)
                 else:
                     self.right.insert_node(data)
@@ -27,11 +27,11 @@ class Node:
    
     def search_node(self, data, parent=None):
         if data < self.data:
-            if self.left is None:
+            if self.left == None:
                 return None, None
             return self.left.search_node(data, self)
         elif data > self.data:
-            if self.right is None:
+            if self.right == None:
                 return None, None
             return self.right.search_node(data, self)
         else:
@@ -74,12 +74,12 @@ class Node:
 
     def delete_node(self, data):
         node, parent = self.search_node(data)
-        if node is not None:
+        if node != None:
             children_count = node.children_count()
             if children_count == 0:  # if node has no children
                 
                 if parent:
-                    if parent.left is node:
+                    if parent.left == node:
                         parent.left = None
                     else:
                         parent.right = None
@@ -93,7 +93,7 @@ class Node:
                 else:
                     n = node.right
                 if parent:
-                    if parent.left is node:
+                    if parent.left == node:
                         parent.left = n
                     else:
                         parent.right = n
@@ -186,7 +186,7 @@ def bin_tree():
 
         def search():
             node, parent =root.search_node(int(raw_input("Enter the value you want to search : ")))
-            if node is None:
+            if node == None:
                 print ("value not found")
 
         def deletion():
