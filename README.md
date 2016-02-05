@@ -1,2 +1,2 @@
 # HT_Binary
-Binary tree implementation in Pyhton
+Binary tree implementation in Python.
